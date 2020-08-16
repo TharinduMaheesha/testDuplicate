@@ -8,22 +8,29 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class MainActivity extends AppCompatActivity {
+public class ResetPassword_Activity extends AppCompatActivity {
     ImageButton btn, btn2,buton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_reset_password_);
 
-
+        Button btn1 = findViewById(R.id.btnConfirmReset);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ResetPassword_Activity.this,CustomerAccount_Activity.class);
+                startActivity(i);
+            }
+        });
 
         btn = findViewById(R.id.btnHome);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,OccasionSelect_Activity.class);
+                Intent i = new Intent(ResetPassword_Activity.this,OccasionSelect_Activity.class);
                 startActivity(i);
             }
         });
@@ -32,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,OccasionProduct_Activity.class);
+                Intent i = new Intent(ResetPassword_Activity.this,OccasionProduct_Activity.class);
                 startActivity(i);
             }
         });
@@ -41,14 +48,12 @@ public class MainActivity extends AppCompatActivity {
         buton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,CustomerMyAccount.class);
+                Intent i = new Intent(ResetPassword_Activity.this,CustomerAccount_Activity.class);
                 startActivity(i);
             }
         });
-
-
-
-
-
     }
+
+
+
 }
